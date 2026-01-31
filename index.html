@@ -4,104 +4,62 @@
   <meta charset="UTF-8">
   <title>Happy Birthday Masooma ❤️</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
-      color: #fff;
-    }
-    h1 { text-align: center; margin-top: 25px; font-size: 2.6em; }
-    .date { text-align: center; opacity: 0.85; margin-bottom: 20px; }
-    .subtitle { max-width: 900px; margin: auto; padding: 0 15px; text-align: center; line-height: 1.7; }
-    button {
-      display: block; margin: 20px auto; background: #25D366; border: none;
-      padding: 12px 26px; font-size: 1em; border-radius: 25px;
-      cursor: pointer; color: white;
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 15px; padding: 20px;
-      max-width: 1100px; margin: auto;
-    }
-    .gallery img {
-      width: 100%; height: 300px; object-fit: cover;
-      border-radius: 14px;
-    }
-    .chat {
-      max-width: 800px; margin: 40px auto; padding: 15px;
-      background: #0b141a; border-radius: 12px;
-    }
-    .msg {
-      max-width: 75%; padding: 12px 15px; margin: 10px 0;
-      border-radius: 12px; line-height: 1.6; font-size: 0.95em;
-    }
-    .left { background: #202c33; border-top-left-radius: 0; }
-    .right {
-      background: #005c4b; border-top-right-radius: 0;
-      margin-left: auto;
-    }
-    .name { font-size: 0.75em; opacity: 0.7; margin-bottom: 4px; }
-    .footer { text-align: center; margin: 40px 15px 30px; opacity: 0.8; }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>Happy Birthday Masooma ❤️</h1>
-<div class="date">🎂 3rd February 1998</div>
+<div class="app">
+  <div class="header">
+    <div class="avatar">❤️</div>
+    <div>
+      <h1>Masooma</h1>
+      <p>Online • My Forever</p>
+    </div>
+  </div>
 
-<div class="subtitle">
-Distance tested us. Life tested us.<br>
-But love like ours doesn’t break — it evolves.
-</div>
+  <div class="chat" id="chat">
+    <div class="msg right long">
+      Masooma,  
+      On this day, the world became more beautiful — because it gave me you.  
+      Not just the smile everyone sees, but the heart only I know.  
 
-<button onclick="playMusic()">Play Our Song 🎶</button>
+      Loving you has taught me patience, strength, and faith.  
+      We’ve walked through distance, misunderstandings, silence, and moments where love was tested —  
+      yet here we are… still choosing each other.  
 
-<audio id="bgMusic" loop>
-  <source src="music.mp3" type="audio/mpeg">
-</audio>
+      I don’t love you for the easy days.  
+      I love you for the hard ones —  
+      the days we held on instead of letting go,  
+      the days love became a decision, not just a feeling.  
 
-<div class="gallery">
-  <img src="Banner1.jpeg">
-  <img src="Banner2.jpeg">
-  <img src="Banner3.jpeg">
-  <img src="Banner4.jpeg">
-  <img src="Banner5.jpeg">
-</div>
+      I promise you this:  
+      even when I fail, I will never stop trying.  
+      Even when life gets heavy, I will never walk away.  
+      My loyalty to you is permanent.  
 
-<div class="chat">
-  <div class="msg right">
-    <div class="name">Aown</div>
-    Masooma,<br><br>
-    On this day, the world became more beautiful — because it gave me you.
-    Not just the smile everyone sees, but the heart only I know.<br><br>
-    Loving you has taught me patience, strength, and faith.
-    We’ve walked through distance, misunderstandings, silence, and moments where love was tested —
-    yet here we are… still choosing each other.<br><br>
-    I don’t love you for the easy days.
-    I love you for the hard ones —
-    the days we held on instead of letting go,
-    the days love became a decision, not just a feeling.<br><br>
-    I promise you this:
-    even when I fail, I will never stop trying.
-    Even when life gets heavy, I will never walk away.
-    My loyalty to you is permanent.<br><br>
-    Happy Birthday, my wife, my home, my peace.<br><br>
-    Always yours,<br>
-    Aown ❤️
+      Happy Birthday, my wife, my home, my peace.  
+      Always yours,  
+      Aown ❤️
+    </div>
+  </div>
+
+  <div class="date">3 February 1998 🎂</div>
+
+  <div class="gallery">
+    <img src="Banner1.jpeg">
+    <img src="Banner2.jpeg">
+    <img src="Banner3.jpeg">
+    <img src="Banner4.jpeg">
+    <img src="Banner5.jpeg">
+  </div>
+
+  <div class="music">
+    <button onclick="toggleMusic()">🎵 Play / Pause</button>
   </div>
 </div>
 
-<div class="footer">
-Forever yours,<br>Aown ❤️
-</div>
+<audio id="bgMusic" src="music.mp3" loop></audio>
 
-<script>
-function playMusic() {
-  document.getElementById("bgMusic").play();
-}
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
