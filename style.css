@@ -1,4 +1,4 @@
-/* GENERAL STYLES */
+/* GENERAL */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -14,7 +14,7 @@ body {
   text-align: center;
 }
 
-/* HERO SECTION */
+/* HERO */
 .hero h1 {
   font-size: 3em;
   margin-bottom: 10px;
@@ -42,35 +42,82 @@ button {
 button:hover {
   background: #128c7e;
 }
+
+/* GALLERY */
 .gallery {
   display: flex;
-  gap: 15px;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
   margin-bottom: 30px;
 }
 
 .gallery img {
-  width: 180px;          /* max width */
-  height: auto;          /* keeps aspect ratio */
+  max-width: 250px;      /* larger box for full image */
+  width: 100%;           
+  height: auto;          /* preserve aspect ratio */
   border-radius: 15px;
-  object-fit: contain;   /* ensures whole image fits */
-  background-color: #fff; /* optional: if image smaller than container */
-  transition: transform 0.3s, box-shadow 0.3s;
+  object-fit: contain;   
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .gallery img:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   box-shadow: 0 8px 15px rgba(0,0,0,0.5);
+}
+
+/* WISHES SCROLLING */
+.wishes {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  border-top: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  padding: 15px 0;
+  margin-bottom: 40px;
+}
+
+.wish-container {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scrollWish 20s linear infinite;
+  font-size: 1.3em;
+  font-style: italic;
+}
+
+@keyframes scrollWish {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* FOOTER */
+footer {
+  font-size: 0.9em;
+  opacity: 0.8;
+  margin-bottom: 20px;
+}
+
+/* FLOATING HEARTS */
+.hearts::before {
+  content: "❤️ ❤️ ❤️ ❤️ ❤️";
+  position: fixed;
+  top: -10%;
+  width: 100%;
+  text-align: center;
+  animation: floatHearts 10s linear infinite;
+  opacity: 0.3;
+}
+
+@keyframes floatHearts {
+  from { top: 100%; }
+  to { top: -20%; }
 }
 
 /* MOBILE RESPONSIVE */
 @media (max-width: 600px) {
   .gallery img {
-    width: 90%;       /* almost full width on mobile */
-    height: auto;     /* keeps aspect ratio */
+    max-width: 90%;
     margin-bottom: 10px;
   }
 }
-
