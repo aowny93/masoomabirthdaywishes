@@ -1,8 +1,22 @@
 const music = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicBtn");
+let isPlaying = false;
 
-function playMusic() {
-  music.play();
-}
+// Play / Pause Music reliably
+musicBtn.addEventListener("click", () => {
+  if (!isPlaying) {
+    music.play().catch(err => {
+      alert("Click the button again if music doesn't play automatically.");
+      console.log(err);
+    });
+    musicBtn.textContent = "⏸️ Pause Our Song";
+    isPlaying = true;
+  } else {
+    music.pause();
+    musicBtn.textContent = "🎵 Play Our Song";
+    isPlaying = false;
+  }
+});
 
 // Ultimate romantic wish for Masooma
 const myWish = `Masooma, my love,
@@ -22,7 +36,7 @@ No distance, no fear, no doubt can ever change what I feel for you.
 Happy Birthday, my Masooma — the one who completes me, the one I cherish beyond words.  
 I am yours, completely and eternally ❤️`;
 
-// People wishes array (empty for now, can add later)
+// People wishes array (can add later)
 const peopleWishes = [
   // Add more wishes here later
 ];
@@ -39,8 +53,6 @@ function showNextWish() {
 
 // Show first wish immediately
 showNextWish();
-
-// Rotate wishes every 5 seconds
 setInterval(showNextWish, 5000);
 
 // Floating hearts animation
@@ -64,4 +76,3 @@ style.innerHTML = `
   to { transform: translateY(-100vh); opacity: 0; }
 }`;
 document.head.appendChild(style);
-
