@@ -42,8 +42,6 @@ button {
 button:hover {
   background: #128c7e;
 }
-
-/* GALLERY */
 .gallery {
   display: flex;
   gap: 15px;
@@ -53,8 +51,26 @@ button:hover {
 }
 
 .gallery img {
-  width: 180px;
-  height: 180px;
+  width: 180px;          /* max width */
+  height: auto;          /* keeps aspect ratio */
   border-radius: 15px;
-  object-fit: contain; /* full image visible */
-  background-color: #fff; /* opti*
+  object-fit: contain;   /* ensures whole image fits */
+  background-color: #fff; /* optional: if image smaller than container */
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.gallery img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.5);
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 600px) {
+  .gallery img {
+    width: 90%;       /* almost full width on mobile */
+    height: auto;     /* keeps aspect ratio */
+    margin-bottom: 10px;
+  }
+}
+
