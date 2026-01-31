@@ -1,54 +1,30 @@
-const music = document.getElementById("music");
+const music = document.getElementById("bgMusic");
+let isPlaying = false;
 
-const scriptLines = [
-  "Masooma…",
-  "I didn’t fall in love loudly.",
-  "I fell slowly. Quietly.",
-  "Somewhere between your smile and your silence.",
-  "",
-  "Distance tried to weaken us.",
-  "But love like ours only grew stronger.",
-  "",
-  "You are not just my wife.",
-  "You are my safe place.",
-  "My forever."
-];
-
-let lineIndex = 0;
-
-function beginFilm() {
-  document.querySelector(".opening").style.display = "none";
-  document.querySelectorAll(".hidden").forEach(s => s.style.display = "flex");
-
-  music.volume = 0;
-  music.play();
-
-  let fade = setInterval(() => {
-    if (music.volume < 1) music.volume += 0.01;
-    else clearInterval(fade);
-  }, 120);
-
-  typeLines();
-  loadGallery();
+function toggleMusic() {
+  if (isPlaying) music.pause();
+  else music.play();
+  isPlaying = !isPlaying;
 }
 
-function typeLines() {
-  if (lineIndex < scriptLines.length) {
-    const p = document.createElement("p");
-    p.textContent = scriptLines[lineIndex];
-    document.getElementById("cinematic-text").appendChild(p);
-    lineIndex++;
-    setTimeout(typeLines, 1200);
-  }
-}
+// Floating hearts animation
+setInterval(() => {
+  const heart = document.createElement("div");
+  heart.innerHTML = "❤️";
+  heart.style.position = "fixed";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.bottom = "0";
+  heart.style.fontSize = "20px";
+  heart.style.opacity = "0.8";
+  heart.style.animation = "floatUp 4s linear";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 4000);
+}, 800);
 
-function loadGallery() {
-  const gallery = document.querySelector(".gallery");
-  for (let i = 1; i <= 25; i++) {
-    const img = document.createElement("img");
-    img.src = `images/${i}.jpg`;
-    gallery.appendChild(img);
-
-    setTimeout(() => img.classList.add("show"), i * 200);
-  }
-}
+const style = document.createElement("style");
+style.innerHTML = `
+@keyframes floatUp {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(-100vh); opacity: 0; }
+}`;
+document.head.appendChild(style);
