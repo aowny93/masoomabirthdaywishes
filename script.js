@@ -1,76 +1,118 @@
-// MUSIC CONTROL
-const music = document.getElementById("bgMusic");
-const musicBtn = document.getElementById("musicBtn");
-let isPlaying = false;
+/* GENERAL */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #ff758c, #ff7eb3);
+  color: #fff;
+  overflow-x: hidden;
+}
 
-musicBtn.addEventListener("click", () => {
-  if (!isPlaying) {
-    music.play().catch(() => {
-      alert("Click the button to start the music — browser autoplay is blocked.");
-    });
-    musicBtn.textContent = "⏸️ Pause Our Song";
-    isPlaying = true;
-  } else {
-    music.pause();
-    musicBtn.textContent = "🎵 Play Our Song";
-    isPlaying = false;
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* HERO */
+.hero h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.hero .subtitle {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+/* BUTTON */
+button {
+  background: #25d366;
+  border: none;
+  padding: 12px 25px;
+  color: white;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 20px;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #128c7e;
+}
+
+/* GALLERY */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.gallery img {
+  max-width: 250px;
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  object-fit: contain;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.5);
+}
+
+/* WISHES */
+.wishes {
+  width: 100%;
+  overflow: hidden;
+  border-top: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  padding: 15px 0;
+  font-size: 1.3em;
+  font-style: italic;
+  position: relative;
+}
+
+#wishText {
+  white-space: nowrap;
+  display: inline-block;
+  position: relative;
+  left: 100%; /* Start offscreen right */
+}
+
+/* FOOTER */
+footer {
+  font-size: 0.9em;
+  opacity: 0.8;
+  margin-bottom: 20px;
+}
+
+/* FLOATING HEARTS */
+.hearts::before {
+  content: "❤️ ❤️ ❤️ ❤️ ❤️";
+  position: fixed;
+  top: -10%;
+  width: 100%;
+  text-align: center;
+  animation: floatHearts 10s linear infinite;
+  opacity: 0.3;
+}
+
+@keyframes floatHearts {
+  from { top: 100%; }
+  to { top: -20%; }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .gallery img {
+    max-width: 90%;
+    margin-bottom: 10px;
   }
-});
-
-// WISHES
-const wishText = document.getElementById("wishText");
-
-// 3 WISHES FROM AOWN
-const husbandWish = `Masooma, my love, even when life tests us and miles keep us apart, my heart is always with you.  
-I may not be perfect, but my love for you is endless.  
-You are my home, my peace, my forever. ❤️ — From your husband, Aown`;
-
-const friendWish = `Happy Birthday Masooma! Even as your friend, I cherish every moment we share.  
-You light up every day with your smile, and I am lucky to have you in my life. 🎉 — From your friend, Aown`;
-
-const loverWish = `Masooma, my dearest, my heart beats only for you.  
-Even across miles, my love grows stronger every day.  
-Happy Birthday, my forever love ❤️ — From your lover, Aown`;
-
-// 4TH WISH FROM MUBASHIR (elder brother figure)
-const mubashirWish = `Happy Birthday Masooma Bhabhi! 🎉  
-You are amazing and always like a younger sister to me.  
-May your life be full of happiness and blessings ❤️ — From Mubashir`;
-
-
-// COMBINE WISHES
-const allWishes = [husbandWish, friendWish, loverWish, mubashirWish];
-let wishIndex = 0;
-
-// SHOW FIRST WISH IMMEDIATELY
-wishText.innerHTML = allWishes[0];
-wishIndex = 1;
-
-// ROTATE WISHES EVERY 10 SECONDS
-setInterval(() => {
-  wishText.innerHTML = allWishes[wishIndex];
-  wishIndex = (wishIndex + 1) % allWishes.length;
-}, 10000);
-
-// FLOATING HEARTS
-setInterval(() => {
-  const heart = document.createElement("div");
-  heart.innerHTML = "❤️";
-  heart.style.position = "fixed";
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.bottom = "0";
-  heart.style.fontSize = "20px";
-  heart.style.opacity = "0.8";
-  heart.style.animation = "floatUp 4s linear";
-  document.body.appendChild(heart);
-  setTimeout(() => heart.remove(), 4000);
-}, 800);
-
-// HEART FLOAT ANIMATION
-const style = document.createElement("style");
-style.innerHTML = `
-@keyframes floatUp {
-  from { transform: translateY(0); opacity: 1; }
-  to { transform: translateY(-100vh); opacity: 0; }
-}`;
-document.head.appendChild(style);
+}
