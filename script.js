@@ -17,23 +17,6 @@ musicBtn.addEventListener("click", () => {
   }
 });
 
-// WISHES
-const allWishes = [
-  `Masooma, my love, even when life tests us and miles keep us apart, my heart is always with you. ❤️ — From your husband, Aown`,
-  `Happy Birthday Masooma! You light up every day with your smile and laughter. 🎉 — From your friend, Aown`,
-  `Masooma, my dearest, my heart beats only for you. ❤️ — From your lover, Aown`
-];
-
-const wishesList = document.getElementById("wishesList");
-
-// Add all wishes as cards
-allWishes.forEach(wish => {
-  const card = document.createElement("div");
-  card.className = "wish-card";
-  card.innerHTML = wish;
-  wishesList.appendChild(card);
-});
-
 // FLOATING HEARTS
 setInterval(() => {
   const heart = document.createElement("div");
@@ -48,7 +31,6 @@ setInterval(() => {
   setTimeout(() => heart.remove(), 4000);
 }, 800);
 
-// HEART FLOAT ANIMATION
 const style = document.createElement("style");
 style.innerHTML = `
 @keyframes floatUp {
