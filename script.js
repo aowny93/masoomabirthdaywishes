@@ -18,7 +18,7 @@ musicBtn.addEventListener("click", () => {
   }
 });
 
-// Ultimate romantic wish for Masooma
+// Your ultimate romantic wish (always shows first)
 const myWish = `Masooma, my love,
 
 I know sometimes it feels like I’m not enough, and distance makes the heart ache.  
@@ -38,7 +38,9 @@ I am yours, completely and eternally ❤️`;
 
 // People wishes array (can add later)
 const peopleWishes = [
-  // Add more wishes here later
+  // Add more wishes later like:
+  // "From Sarah: Happy Birthday!",
+  // "From Mom: Stay blessed ❤️"
 ];
 
 let allWishes = [myWish, ...peopleWishes];
@@ -46,14 +48,17 @@ let wishIndex = 0;
 
 const wishText = document.getElementById("wishText");
 
-function showNextWish() {
-  wishText.innerHTML = allWishes[wishIndex];
-  wishIndex = (wishIndex + 1) % allWishes.length;
-}
+// Show the first wish immediately
+wishText.innerHTML = allWishes[0];
+wishIndex = 1; // start rotation from the next wish
 
-// Show first wish immediately
-showNextWish();
-setInterval(showNextWish, 5000);
+// Rotate wishes every 5 seconds
+setInterval(() => {
+  if(allWishes.length > 1) { // only rotate if there are more wishes
+    wishText.innerHTML = allWishes[wishIndex];
+    wishIndex = (wishIndex + 1) % allWishes.length;
+  }
+}, 5000);
 
 // Floating hearts animation
 setInterval(() => {
