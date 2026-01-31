@@ -1,3 +1,4 @@
+/* GENERAL STYLES */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -13,6 +14,7 @@ body {
   text-align: center;
 }
 
+/* HERO SECTION */
 .hero h1 {
   font-size: 3em;
   margin-bottom: 10px;
@@ -24,6 +26,7 @@ body {
   font-style: italic;
 }
 
+/* BUTTON */
 button {
   background: #25d366;
   border: none;
@@ -33,62 +36,25 @@ button {
   cursor: pointer;
   font-size: 16px;
   margin-bottom: 20px;
+  transition: background 0.3s;
 }
 
+button:hover {
+  background: #128c7e;
+}
+
+/* GALLERY */
 .gallery {
   display: flex;
-  gap: 10px;
+  gap: 15px;
   justify-content: center;
   flex-wrap: wrap;
   margin-bottom: 30px;
 }
 
 .gallery img {
-  width: 150px;
-  height: 150px;
+  width: 180px;
+  height: 180px;
   border-radius: 15px;
-  object-fit: cover;
-  transition: transform 0.3s;
-}
-
-.gallery img:hover {
-  transform: scale(1.1);
-}
-
-.wishes {
-  font-size: 1.3em;
-  font-style: italic;
-  min-height: 120px;
-  margin-bottom: 40px;
-}
-
-.wish {
-  animation: fadeIn 1s ease;
-}
-
-footer {
-  font-size: 0.9em;
-  opacity: 0.8;
-}
-
-/* Floating hearts */
-.hearts::before {
-  content: "❤️ ❤️ ❤️ ❤️ ❤️";
-  position: fixed;
-  top: -10%;
-  width: 100%;
-  text-align: center;
-  animation: floatHearts 10s linear infinite;
-  opacity: 0.3;
-}
-
-@keyframes floatHearts {
-  from { top: 100%; }
-  to { top: -20%; }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
+  object-fit: contain; /* full image visible */
+  background-color: #fff; /* opti*
