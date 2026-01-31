@@ -1,13 +1,12 @@
+// MUSIC CONTROL
 const music = document.getElementById("bgMusic");
 const musicBtn = document.getElementById("musicBtn");
 let isPlaying = false;
 
-// Play / Pause Music reliably
 musicBtn.addEventListener("click", () => {
   if (!isPlaying) {
-    music.play().catch(err => {
-      alert("Click the button again if music doesn't play automatically.");
-      console.log(err);
+    music.play().catch(() => {
+      alert("Click the button to start the music — browser autoplay is blocked.");
     });
     musicBtn.textContent = "⏸️ Pause Our Song";
     isPlaying = true;
@@ -18,49 +17,36 @@ musicBtn.addEventListener("click", () => {
   }
 });
 
-// Your ultimate romantic wish (always shows first)
-const myWish = `Masooma, my love,
-
-I know sometimes it feels like I’m not enough, and distance makes the heart ache.  
-I know life has tested us with misunderstandings, silences, and moments where doubt tried to creep in.  
-
-But hear me now — my love for you is endless, unwavering, and true.  
-I may not be perfect, but every heartbeat, every thought, every moment of my life is yours.  
-
-Even when we are apart, I carry you in me — in my dreams, in my prayers, in every hope I have for the future.  
-You are my home, my peace, my safe place, my forever.  
-
-I promise to be better every day, to listen, to hold you close even from miles away, and to love you without limits.  
-No distance, no fear, no doubt can ever change what I feel for you.  
-
-Happy Birthday, my Masooma — the one who completes me, the one I cherish beyond words.  
-I am yours, completely and eternally ❤️`;
-
-// People wishes array (can add later)
-const peopleWishes = [
-  // Add more wishes later like:
-  // "From Sarah: Happy Birthday!",
-  // "From Mom: Stay blessed ❤️"
-];
-
-let allWishes = [myWish, ...peopleWishes];
-let wishIndex = 0;
-
+// WISHES
 const wishText = document.getElementById("wishText");
 
-// Show the first wish immediately
+// YOUR ULTIMATE WISH
+const myWish = `Masooma, my love, even when life tests us and miles keep us apart, my heart is always with you.  
+I may not be perfect, but my love for you is endless.  
+You are my home, my peace, my forever.  
+Happy Birthday, my Masooma ❤️ — From your husband, Aown`;
+
+// PEOPLE WISHES (add later)
+const peopleWishes = [
+  // "From Sarah: Happy Birthday Masooma! ❤️",
+  // "From Mom: Stay blessed forever ❤️"
+];
+
+// COMBINE ALL WISHES
+const allWishes = [myWish, ...peopleWishes];
+let wishIndex = 0;
+
+// SHOW FIRST WISH
 wishText.innerHTML = allWishes[0];
-wishIndex = 1; // start rotation from the next wish
+wishIndex = 1;
 
-// Rotate wishes every 5 seconds
+// ROTATE WISHES EVERY 10 SECONDS
 setInterval(() => {
-  if(allWishes.length > 1) { // only rotate if there are more wishes
-    wishText.innerHTML = allWishes[wishIndex];
-    wishIndex = (wishIndex + 1) % allWishes.length;
-  }
-}, 5000);
+  wishText.innerHTML = allWishes[wishIndex];
+  wishIndex = (wishIndex + 1) % allWishes.length;
+}, 10000);
 
-// Floating hearts animation
+// FLOATING HEARTS
 setInterval(() => {
   const heart = document.createElement("div");
   heart.innerHTML = "❤️";
@@ -74,6 +60,7 @@ setInterval(() => {
   setTimeout(() => heart.remove(), 4000);
 }, 800);
 
+// HEART FLOAT ANIMATION
 const style = document.createElement("style");
 style.innerHTML = `
 @keyframes floatUp {
