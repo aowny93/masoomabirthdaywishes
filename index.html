@@ -1,65 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Happy Birthday Masooma ❤️</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Happy Birthday Masooma ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="app">
-  <div class="header">
-    <div class="avatar">❤️</div>
-    <div>
-      <h1>Masooma</h1>
-      <p>Online • My Forever</p>
-    </div>
-  </div>
+<div class="container">
+  <div class="hearts"></div>
 
-  <div class="chat" id="chat">
-    <div class="msg right long">
-      Masooma,  
-      On this day, the world became more beautiful — because it gave me you.  
-      Not just the smile everyone sees, but the heart only I know.  
+  <header class="hero">
+    <h1>Happy Birthday Masooma ❤️</h1>
+    <p class="subtitle">Even miles apart, my heart is always with you</p>
+    <button onclick="playMusic()">🎵 Play Our Song</button>
+  </header>
 
-      Loving you has taught me patience, strength, and faith.  
-      We’ve walked through distance, misunderstandings, silence, and moments where love was tested —  
-      yet here we are… still choosing each other.  
-
-      I don’t love you for the easy days.  
-      I love you for the hard ones —  
-      the days we held on instead of letting go,  
-      the days love became a decision, not just a feeling.  
-
-      I promise you this:  
-      even when I fail, I will never stop trying.  
-      Even when life gets heavy, I will never walk away.  
-      My loyalty to you is permanent.  
-
-      Happy Birthday, my wife, my home, my peace.  
-      Always yours,  
-      Aown ❤️
-    </div>
-  </div>
-
-  <div class="date">3 February 1998 🎂</div>
-
-  <div class="gallery">
+  <section class="gallery">
     <img src="Banner1.jpeg">
     <img src="Banner2.jpeg">
     <img src="Banner3.jpeg">
     <img src="Banner4.jpeg">
     <img src="Banner5.jpeg">
-  </div>
+  </section>
 
-  <div class="music">
-    <button onclick="toggleMusic()">🎵 Play / Pause</button>
-  </div>
+  <section class="wishes">
+    <div id="wishText" class="wish">
+      <!-- Your wish will appear here -->
+    </div>
+  </section>
+
+  <footer>
+    Made with endless love by Aown ❤️
+  </footer>
 </div>
 
 <audio id="bgMusic" src="music.mp3" loop></audio>
-
 <script src="script.js"></script>
 </body>
 </html>
