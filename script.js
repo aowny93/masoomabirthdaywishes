@@ -20,23 +20,29 @@ musicBtn.addEventListener("click", () => {
 // WISHES
 const wishText = document.getElementById("wishText");
 
-// YOUR ULTIMATE WISH
-const myWish = `Masooma, my love, even when life tests us and miles keep us apart, my heart is always with you.  
+// 3 WISHES FROM AOWN
+const husbandWish = `Masooma, my love, even when life tests us and miles keep us apart, my heart is always with you.  
 I may not be perfect, but my love for you is endless.  
-You are my home, my peace, my forever.  
-Happy Birthday, my Masooma ❤️ — From your husband, Aown`;
+You are my home, my peace, my forever. ❤️ — From your husband, Aown`;
 
-// PEOPLE WISHES (add later)
-const peopleWishes = [
-  // "From Sarah: Happy Birthday Masooma! ❤️",
-  // "From Mom: Stay blessed forever ❤️"
-];
+const friendWish = `Happy Birthday Masooma! Even as your friend, I cherish every moment we share.  
+You light up every day with your smile, and I am lucky to have you in my life. 🎉 — From your friend, Aown`;
 
-// COMBINE ALL WISHES
-const allWishes = [myWish, ...peopleWishes];
+const loverWish = `Masooma, my dearest, my heart beats only for you.  
+Even across miles, my love grows stronger every day.  
+Happy Birthday, my forever love ❤️ — From your lover, Aown`;
+
+// 4TH WISH FROM MUBASHIR (elder brother figure)
+const mubashirWish = `Happy Birthday Masooma Bhabhi! 🎉  
+You are amazing and always like a younger sister to me.  
+May your life be full of happiness and blessings ❤️ — From Mubashir`;
+
+
+// COMBINE WISHES
+const allWishes = [husbandWish, friendWish, loverWish, mubashirWish];
 let wishIndex = 0;
 
-// SHOW FIRST WISH
+// SHOW FIRST WISH IMMEDIATELY
 wishText.innerHTML = allWishes[0];
 wishIndex = 1;
 
