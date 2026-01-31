@@ -1,4 +1,3 @@
-/* GENERAL */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -14,7 +13,6 @@ body {
   text-align: center;
 }
 
-/* HERO */
 .hero h1 {
   font-size: 3em;
   margin-bottom: 10px;
@@ -26,7 +24,6 @@ body {
   font-style: italic;
 }
 
-/* BUTTON */
 button {
   background: #25d366;
   border: none;
@@ -43,7 +40,6 @@ button:hover {
   background: #128c7e;
 }
 
-/* GALLERY */
 .gallery {
   display: flex;
   flex-wrap: wrap;
@@ -67,7 +63,7 @@ button:hover {
   box-shadow: 0 8px 15px rgba(0,0,0,0.5);
 }
 
-/* WISHES CORNER */
+/* Wishes Corner Styling */
 .wishes-corner {
   background: rgba(255,255,255,0.1);
   border-radius: 15px;
@@ -80,13 +76,6 @@ button:hover {
   margin-bottom: 20px;
 }
 
-.wishes-list {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  align-items: center;
-}
-
 .wish-card {
   background: rgba(255,255,255,0.2);
   padding: 15px 20px;
@@ -95,16 +84,15 @@ button:hover {
   text-align: left;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   font-size: 1.1em;
+  margin-bottom: 10px;
 }
 
-/* FOOTER */
 footer {
   font-size: 0.9em;
   opacity: 0.8;
   margin-bottom: 20px;
 }
 
-/* FLOATING HEARTS */
 .hearts::before {
   content: "❤️ ❤️ ❤️ ❤️ ❤️";
   position: fixed;
@@ -120,7 +108,6 @@ footer {
   to { top: -20%; }
 }
 
-/* MOBILE */
 @media (max-width: 600px) {
   .gallery img {
     max-width: 90%;
